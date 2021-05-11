@@ -13,9 +13,12 @@ recnplan <- function(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000){
+  K=1000){
   
   a_true=std.ahat; b_true=std.bhat; cp_true=std.cphat
+  nrawdata=K
+  nboot=1000; nemp=2000
+  
   if(power.desired!=meanpower.desired) power.desired=meanpower.desired
   if(is.null(Nplan.start)) Nplan.start=ceiling(n.sigasigb(a_true,b_true,cp_true,alpha,power.desired))
   if(method=="joint" & goal=="assurance"){
