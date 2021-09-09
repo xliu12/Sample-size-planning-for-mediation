@@ -17,7 +17,7 @@ recnplan <- function(
   
   a_true=std.ahat; b_true=std.bhat; cp_true=std.cphat
   nrawdata=K
-  nboot=1000; nemp=2000
+  nboot=1000; nemp=2000 ; # nemp is the number of Monte Carlo simulations used for obtaining each power value in the power distribution
   
   if(power.desired!=meanpower.desired) power.desired=meanpower.desired
   if(is.null(Nplan.start)) Nplan.start=ceiling(n.sigasigb(a_true,b_true,cp_true,alpha,power.desired))
@@ -88,7 +88,7 @@ joint_recnplan1_80assurance = recnplan(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=1000
 )
 
 joint_recnplan1_80assurance
@@ -104,7 +104,7 @@ joint_recnplan1_80mean = recnplan(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=1000
 )
 
 joint_recnplan1_80mean
