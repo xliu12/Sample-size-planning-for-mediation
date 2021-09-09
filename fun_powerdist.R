@@ -4,7 +4,7 @@ source('fun_powerdist.perboot.R')
 
 powerdist<- function(
   std.ahat=.39, std.bhat=.39, std.cphat=0,
-  method="joint",
+  method="joint", # perboot uses the percentile bootstrap test; it will take longer than the joint significance test 
   Npilot=250,
   Nplan=68,
   alpha=0.05, 
