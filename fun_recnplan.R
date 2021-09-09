@@ -98,8 +98,8 @@ joint_recnplan1_80mean = recnplan(
   method="joint",
   goal="meanpower",
   Npilot=Npilot1,
-  Nplan.start=NULL,
-  nstep=1,
+  Nplan.start=200,
+  nstep=5,
   power.desired=0.8,
   assurance.desired=.8,
   meanpower.desired=.8,
@@ -114,13 +114,13 @@ perboot_recnplan1_80assurance = recnplan(
   method="perboot",
   goal="assurance",
   Npilot=Npilot1,
-  Nplan.start=NULL,
-  nstep=1,
+  Nplan.start=250,
+  nstep=5,
   power.desired=0.8,
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=100
 )
 
 perboot_recnplan1_80assurance
@@ -136,7 +136,7 @@ perboot_recnplan1_80mean = recnplan(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=1000
 )
 
 perboot_recnplan1_80mean
@@ -163,7 +163,7 @@ joint_recnplan2_80assurance = recnplan(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=1000
 )
 
 joint_recnplan2_80assurance
@@ -179,7 +179,7 @@ joint_recnplan2_80mean = recnplan(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=1000
 )
 
 joint_recnplan2_80mean
@@ -195,7 +195,7 @@ perboot_recnplan2_80assurance = recnplan(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=1000
 )
 
 perboot_recnplan2_80assurance
@@ -211,7 +211,7 @@ perboot_recnplan2_80mean = recnplan(
   assurance.desired=.8,
   meanpower.desired=.8,
   alpha=.05,
-  nrawdata=1000, nboot=2000, nemp=1000
+  K=1000
 )
 
 perboot_recnplan2_80mean
